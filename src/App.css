@@ -1,38 +1,55 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 30px;
+  grid-row-gap: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-container {
+  display: flex;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 108%;
+  background-color: rgb(236, 232, 232);
+  border-radius: 15px;
+  width: 70%;
+  transition-duration: 300ms;
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px 0 gray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card img {
+  height: 175px;
+  width: 250px;
+}
+
+
+.card h1 {
+  font-size: 25px;
+}
+
+.card p {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 1100px) {
+  .App {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
